@@ -7,8 +7,16 @@ allButtons.forEach(b => {
             tocaSom(tecla);
         }
     };
+    b.onkeydown = function (event) {
+        if (event.code === 'Enter' || event.code === 'Space') {
+            b.classList.add('ativa');
+        }
+    }
+    b.onkeyup = function () {
+        b.classList.remove('ativa');
+    }
 })
 
-function tocaSom(tecla) {
+function tocaSom (tecla) {
     document.querySelector(`#som_${tecla}`).play();
 }
