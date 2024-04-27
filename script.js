@@ -18,5 +18,8 @@ allButtons.forEach(b => {
 })
 
 function tocaSom (tecla) {
-    document.querySelector(`#som_${tecla}`).play();
+    const elementoSom = document.querySelector(`#som_${tecla}`);
+    if (elementoSom && elementoSom.localName === 'audio') {
+        elementoSom.play();
+    }
 }
